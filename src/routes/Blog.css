@@ -1,0 +1,45 @@
+.blog-content .blog-para {
+    line-height: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.blog-header {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+.blog-header .blog-info {
+    flex: 1;
+}
+
+.blog-header .like-button {
+    display: flex;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgba(20,20,20,0.1);
+    margin: 0.75rem 0;
+    transition: 0.3s border;
+}
+
+.blog-header .like-button:hover {
+    border-color: #d82b2b;
+}
+
+.blog-content .blog-author {
+    display: flex;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.blog-content .blog-author img {
+    margin-left: 1rem;
+    margin-right: 0.25rem;
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.blog-content .blog-author img:first-of-type {
+    margin-left: 0;
+}

@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+
+import { useState, useEffect } from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { AppContext } from './contexts';
 import './App.css';
+// Importing Route Screens
+import Home from './routes/Home'
+import Blog from './routes/Blog'
+import New from './routes/New'
+import Edit from './routes/Edit'
+import api from './data';
 
 function App() {
+  const [state, setState] = useState(api.state)
+  useEffect(() => {
+    api.update(state);
+    return () => {}
+  }, [state])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <AppContext.Provider value={[state, setState]}>
+          <Route path="/" exact><Home /></Route>
+          <Route path="/new"><New /></Route>
+          <Route path="/blog/:id"><Blog /></Route>
+          <Route path="/edit/:id"><Edit /></Route>
+        </AppContext.Provider>
+      </Switch>
+    </Router>
   );
 }
 

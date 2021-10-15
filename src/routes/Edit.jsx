@@ -37,7 +37,7 @@ function Edit() {
             </label>
             <label>
                 Category
-                <select onChange={(e) => setBlog(prev => ({...prev, category: e.target.value}))}>
+                <select name="category" onChange={(e) => setBlog(prev => ({...prev, category: e.target.value}))}>
                     {Object.entries(categories).map(([i, c]) => <option value={i} key={i} selected={blog.category === i}>{c}</option>)}
                 </select>
             </label>

@@ -39,7 +39,7 @@ function New() {
             </label>
             <label>
                 Category
-                <select>
+                <select name="category">
                     {Object.entries(categories).map(([i, c]) => <option value={i} key={i}>{c}</option>)}
                 </select>
             </label>
